@@ -3,34 +3,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Brain, Users, Trophy, Wallet, Gift, Zap, Shield, Clock } from "lucide-react"
 import Link from "next/link"
+import NavBar from "@/components/NavBar"
 
 export default function HowItWorks() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <Brain className="h-8 w-8 text-yellow-400" />
-            <span className="text-2xl font-bold text-white">Quiz Clash</span>
-          </Link>
-          <div className="flex items-center space-x-4">
-            <Link href="/login">
-              <Button variant="ghost" className="text-white hover:text-yellow-400">
-                Login
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button className="bg-yellow-400 text-purple-900 hover:bg-yellow-300">Sign Up</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black">
 
-      <div className="container mx-auto px-4 py-12">
+    <NavBar/>
+
+      <div className="container pt-24 mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">How Quiz Clash Works</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">How Qchamp Works</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Battle your way to victory in the ultimate quiz competition. Here's everything you need to know to get
             started and start winning!
@@ -42,10 +26,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   1
                 </div>
-                <Users className="h-6 w-6 text-yellow-400" />
+                <Users className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Sign Up & Get Bonus</CardTitle>
               <CardDescription className="text-gray-300">
@@ -65,10 +49,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   2
                 </div>
-                <Wallet className="h-6 w-6 text-yellow-400" />
+                <Wallet className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Add Money to Wallet</CardTitle>
               <CardDescription className="text-gray-300">Top up your wallet to join paid quiz battles</CardDescription>
@@ -86,10 +70,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   3
                 </div>
-                <Brain className="h-6 w-6 text-yellow-400" />
+                <Brain className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Join Quiz Battles</CardTitle>
               <CardDescription className="text-gray-300">
@@ -109,10 +93,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   4
                 </div>
-                <Zap className="h-6 w-6 text-yellow-400" />
+                <Zap className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Answer Questions</CardTitle>
               <CardDescription className="text-gray-300">
@@ -132,10 +116,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   5
                 </div>
-                <Trophy className="h-6 w-6 text-yellow-400" />
+                <Trophy className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Win & Earn Money</CardTitle>
               <CardDescription className="text-gray-300">
@@ -155,10 +139,10 @@ export default function HowItWorks() {
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="bg-yellow-400 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                <div className="bg-gradient-to-tr from-emerald-900 to-emerald-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
                   6
                 </div>
-                <Gift className="h-6 w-6 text-yellow-400" />
+                <Gift className="h-6 w-6 text-emerald-700" />
               </div>
               <CardTitle className="text-white">Withdraw Earnings</CardTitle>
               <CardDescription className="text-gray-300">Cash out your winnings to your bank account</CardDescription>
@@ -249,7 +233,7 @@ export default function HowItWorks() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <Wallet className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+                  <Wallet className="h-12 w-12 text-violet-500 mx-auto mb-4" />
                   <h3 className="text-white font-semibold mb-2">Quick Withdrawals</h3>
                   <p className="text-gray-300 text-sm">
                     Fast and secure withdrawal process with multiple payout options
@@ -269,12 +253,12 @@ export default function HowItWorks() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/signup">
-              <Button size="lg" className="bg-yellow-400 text-purple-900 hover:bg-yellow-300">
+              <Button size="lg" className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-black ">
                 Sign Up & Get ₹10 Bonus
               </Button>
             </Link>
             <Link href="/login">
-              <Button size="lg" variant="outline" className="text-white border-white/20 hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-white hover:bg-transparent  border-white/20 bg-white/10">
                 Already Have Account? Login
               </Button>
             </Link>

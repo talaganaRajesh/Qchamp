@@ -12,6 +12,7 @@ import { Brain, Mail, Lock } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { signInWithEmail } from "@/lib/auth"
+import NavBar from "@/components/NavBar"
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -63,11 +64,16 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-sm">
+    <div className=" flex-col bg-gradient-to-br from-black via-zinc-950/95 to-black flex items-center justify-center">
+      
+      <div className="w-full">
+        <NavBar/>
+      </div>
+      
+      <Card className="w-full mb-20 max-w-md bg-white/10 border-white/20 backdrop-blur-sm mt-32">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
-            <Brain className="h-12 w-12 text-yellow-400" />
+            <Brain className="h-12 w-12 text-emerald-500" />
           </div>
           <CardTitle className="text-2xl font-bold text-white">Welcome Back</CardTitle>
           <CardDescription className="text-gray-300">Sign in to continue your quiz battles</CardDescription>
@@ -108,7 +114,7 @@ export default function Login() {
                 <Input
                   id="password"
                   name="password"
-                  type="password"
+                  type="text"
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
@@ -119,24 +125,24 @@ export default function Login() {
             </div>
 
             <div className="flex justify-end">
-              <Link href="/forgot-password" className="text-sm text-yellow-400 hover:text-yellow-300">
+              <Link href="/forgot-password" className="text-sm text-emerald-400 hover:text-emerald-300">
                 Forgot password?
               </Link>
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-semibold"
+              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 hover:from-emerald-600 hover:to-emerald-700 text-black  font-semibold"
               disabled={loading}
             >
-              {loading ? "Signing In..." : "Sign In"}
+              {loading ? "Loging In..." : "Log In"}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-gray-300">
               Don't have an account?{" "}
-              <Link href="/signup" className="text-yellow-400 hover:text-yellow-300 font-semibold">
+              <Link href="/signup" className="text-emerald-400 hover:text-emerald-300 font-semibold">
                 Sign Up
               </Link>
             </p>

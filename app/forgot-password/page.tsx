@@ -12,6 +12,8 @@ import { Brain, Mail, ArrowLeft, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import { sendPasswordResetEmail } from "firebase/auth"
 import { auth } from "@/lib/firebase"
+import NavBar from "@/components/NavBar"
+
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("")
@@ -50,7 +52,9 @@ export default function ForgotPassword() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+      <div className=" flex-col bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+        
+        
         <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-sm">
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
@@ -94,8 +98,13 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-sm">
+    <div className="flex-col  bg-gradient-to-br from-black via-zinc-950/95 to-black  flex items-center justify-center">
+
+       <div className="w-full">
+        <NavBar/>
+      </div>
+
+      <Card className="w-full mt-48 mb-32 max-w-md bg-white/10 border-white/20 backdrop-blur-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <Brain className="h-12 w-12 text-yellow-400" />

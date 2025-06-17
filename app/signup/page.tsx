@@ -12,14 +12,13 @@ import { Brain, Mail, Lock, User, Phone, Gift, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { signUpWithEmail, createUserProfile } from "@/lib/auth"
+import NavBar from "@/components/NavBar"
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     password: "",
-    confirmPassword: "",
     referralCode: "",
   })
   const [loading, setLoading] = useState(false)
@@ -47,11 +46,7 @@ export default function SignUp() {
       return
     }
 
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match")
-      setLoading(false)
-      return
-    }
+   
 
     if (formData.password.length < 6) {
       setError("Password must be at least 6 characters long")
@@ -67,7 +62,6 @@ export default function SignUp() {
       // Create user profile in Firestore
       await createUserProfile(user, {
         name: formData.name,
-        phone: formData.phone || undefined,
         referralCode: formData.referralCode || undefined,
       })
 
@@ -105,13 +99,16 @@ export default function SignUp() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-sm">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-zinc-950/95 to-black">
+      
+      <div className="w-full">
+        <NavBar/> 
+      </div>
+    
+      
+      <Card className="w-full max-w-md mt-24 mb-20 bg-white/10 border-white/20 backdrop-blur-sm">
         <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <Brain className="h-12 w-12 text-yellow-400" />
-          </div>
-          <CardTitle className="text-2xl font-bold text-white">Join Quiz Clash</CardTitle>
+          <CardTitle className="text-2xl font-bold text-white">Join Qchamp</CardTitle>
           <CardDescription className="text-gray-300">Create your account and start battling!</CardDescription>
         </CardHeader>
         <CardContent>
@@ -141,7 +138,7 @@ export default function SignUp() {
                   placeholder="Enter your full name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                  className="pl-10 bg-white/10  border-white/20 text-white placeholder:text-gray-400"
                   required
                   disabled={loading}
                 />
@@ -168,24 +165,6 @@ export default function SignUp() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="phone" className="text-white">
-                Phone Number (Optional)
-              </Label>
-              <div className="relative">
-                <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  disabled={loading}
-                />
-              </div>
-            </div>
 
             <div className="space-y-2">
               <Label htmlFor="password" className="text-white">
@@ -196,7 +175,7 @@ export default function SignUp() {
                 <Input
                   id="password"
                   name="password"
-                  type="password"
+                  type="text"
                   placeholder="Create a password"
                   value={formData.password}
                   onChange={handleChange}
@@ -207,25 +186,6 @@ export default function SignUp() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword" className="text-white">
-                Confirm Password *
-              </Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm your password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  required
-                  disabled={loading}
-                />
-              </div>
-            </div>
 
             <div className="space-y-2">
               <Label htmlFor="referralCode" className="text-white">
@@ -237,19 +197,18 @@ export default function SignUp() {
                   id="referralCode"
                   name="referralCode"
                   type="text"
-                  placeholder="Enter referral code for bonus"
+                  placeholder="Enter referral code for ₹10 bonus"
                   value={formData.referralCode}
                   onChange={handleChange}
                   className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   disabled={loading}
                 />
               </div>
-              <p className="text-xs text-gray-400">Get ₹10 bonus with a valid referral code!</p>
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-semibold"
+              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 hover:from-emerald-600 hover:to-emerald-700 text-black font-semibold text-base transition-colors duration-300 "
               disabled={loading}
             >
               {loading ? (
@@ -266,8 +225,8 @@ export default function SignUp() {
           <div className="mt-6 text-center">
             <p className="text-gray-300">
               Already have an account?{" "}
-              <Link href="/login" className="text-yellow-400 hover:text-yellow-300 font-semibold">
-                Sign In
+              <Link href="/login" className="text-emerald-500 hover:text-emerald-300 font-semibold">
+                Log In
               </Link>
             </p>
           </div>
